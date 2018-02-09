@@ -1,0 +1,28 @@
+<div class="col-lg-10 col-lg-offset-1">
+    <div class="jumbotron">
+        
+        <div id="Titulo"><h3>{{titulo}}</h3></div>
+
+        <div *ngIf="!actividades">
+            <h3>Este grupo no tiene actividades todavía.</h3>
+        </div>
+        <div *ngIf="actividades">
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let act of actividades">
+                    <article>
+                        <h3>{{ act.nombre }}</h3>                
+                        <div><img alt="imagen" style="padding-top: 5px; padding-right: 20px;" src="assets/imagenes/icono50.png"/>
+                        {{ act.fecha1 }}</div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div id="botoneraInferior">
+            <a [routerLink]="['/Home']" class="btn btn-lg btn-primary">Home</a>
+            <a [routerLink]="['/ListGrupos']" class="btn btn-lg btn-primary">Grupos</a>
+            <a [routerLink]="['/AltaUsuarios']" class="btn btn-lg btn-primary">Alta Usuarios</a>
+            <!--<li><a [routerLink]="['/DatosUsuario']">Mis Datos Usuario</a></li>      -->
+            <a [routerLink]="['/Login']" class="btn btn-lg btn-primary">Login</a>
+        </div>
+    </div>
+</div>

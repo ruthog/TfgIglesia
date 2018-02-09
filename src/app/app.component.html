@@ -1,0 +1,43 @@
+<div id="content" class="col-lg-10 col-lg-offset-1">
+  <header id="header" class="col-lg-12">
+    <h1>
+      {{title}}
+    </h1>
+  </header>
+  
+  <nav id="nav" class="col-lg-12">
+    <ul>
+      <li><a [routerLink]="['/Home']" [routerLinkActive]="['activado']">Home</a></li>
+      <li><a [routerLink]="['/ListGrupos']" [routerLinkActive]="['activado']">Grupos</a></li>
+      <li><a [routerLink]="['/AltaUsuarios']" [routerLinkActive]="['activado']">Alta Usuarios</a></li>
+      <!--<li><a [routerLink]="['/DatosUsuario']">Mis Datos Usuario</a></li>      -->
+      <li><a [routerLink]="['/Login']" [routerLinkActive]="['activado']">Login</a></li>
+    </ul>
+  </nav>
+    
+  <section id="main" class="col-lg-12">
+    <!--Componente actual-->
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer id="footer" class="col-lg-12">
+    <p>Parroquia - rutholgon</p>
+  </footer>
+
+  <!--<app-ListActividades-tag [_idGrupo]="g.id"></app-ListActividades-tag>-->
+
+  <!--
+  <h2>Here are some links to help you start: </h2>
+  <ul>
+    <li>
+      <h2>
+        <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a>
+      </h2>
+    </li>    
+  </ul>
+  <hr>
+-->
+
+</div>
+
+

@@ -1,0 +1,117 @@
+<div class="col-lg-10 col-lg-offset-1">
+    <div class="jumbotron">
+        <div id="Titulo">
+            <h3>{{titulo}}</h3>
+        </div>
+        <div *ngIf="!participante">
+            <h3>A esta página solo se puede acceder desde el login.</h3>
+        </div>
+        <div *ngIf="mostrar===true">
+            <div *ngIf="participante" style=" text-align:center; width: 50%; margin-right: 25%; margin-left: 25%; ">
+
+                <table style="text-align: center; width: 400px; margin-right: 25%; margin-left: 25%;">
+                    <tr>
+                        <td id="celdaDatLab" style="width: 180px;">
+                            <Label>Nombre:</Label>
+                        </td>
+                        <td id="celdaDatCont" style="width: 200px;">
+                            <h6>{{participante.nombre }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  id="celdaDatLab">
+                            <Label>Apellido Primero:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.apellido1 }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Apellido Segundo:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.apellido2 }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Edad:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.edad }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Email:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6><a href="mailto:">{{participante.email }}</a></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Teléfono:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.telefono }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Móvil:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.movil }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Usuario:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.usuario }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celdaDatLab">
+                            <Label>Password:</Label>
+                        </td>
+                        <td id="celdaDatCont">
+                            <h6>{{participante.password }}</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <img alt="Apuntarse" src="assets/imagenes/editusa.jpg">
+                            <a [routerLink]="['/AltaUsuarios', participante.id]">Editar Usuario Actual</a>
+                            <img alt="Apuntarse" src="assets/imagenes/editusu.png">
+                        </td>
+                    </tr>
+                </table>
+                <table style="display: inline-table; margin-right: 1px; margin-left: 1px; ">
+                    <tr>
+                        <td style=" padding: 4px;">
+                            <div id="Titulo"><h3>MIS ACTIVIDADES</h3></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">
+                            <div>
+                                <a [routerLink]="['/ListActividades', participante.id]"> <img alt="Apuntarse" src="assets/imagenes/apuntp.png"> Apuntarse a Actividades</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  style=" padding: 5px;">
+                            <div>
+                                <app-ActivUsuario></app-ActivUsuario>
+                            </div>
+                        </td>
+                    </tr>
+                </table>    
+            </div>
+        </div>
+    </div>
+</div>

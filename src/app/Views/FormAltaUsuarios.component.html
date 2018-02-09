@@ -1,0 +1,115 @@
+<div class="col-lg-10 col-lg-offset-1">
+    <div class="jumbotron">
+        <div id="Titulo">
+            <h3>{{titulo}}</h3>
+        </div>
+        <div id="divCentral" *ngIf="participante">
+            <form #formUsuarios="ngForm" (ngSubmit)="onSubmit()" id="form-Usuarios" class="col-lg-6">
+                <table id="tabla">
+                    <tr>
+                        <td id="celdaP">
+                            <label>* Nombre</label>
+                        </td>
+                        <td id="celdaG">
+                            <input type="text" class="form-control" #nombre="ngModel" name="nombre" [(ngModel)]="participante.nombre" required />
+                        </td>
+                        <td id="celdaP">
+                            <span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El nombre es obligatorio</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>* Apellido Primero</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #apellido1="ngModel" name="apellido1" [(ngModel)]="participante.apellido1" required/>
+                        </td>
+                        <td>
+                            <span *ngIf="!apellido1.valid && apellido1.touched" class="label label-danger">El primer apellido es obligatorio</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>* Apellido Segundo</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #apellido2="ngModel" name="apellido2" [(ngModel)]="participante.apellido2" required />
+                        </td>
+                        <td>
+                            <span *ngIf="!apellido2.valid && apellido2.touched" class="label label-danger">El segundo apellido es obligatorio</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Edad</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #edad="ngModel" name="edad" [(ngModel)]="participante.edad" pattern="[0-9]+" />
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Email</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="participante.email" />
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Teléfono</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #telefono="ngModel" name="telefono" [(ngModel)]="participante.telefono" pattern="[0-9]+" />
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Móvil</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #movil="ngModel" name="movil" [(ngModel)]="participante.movil" pattern="[0-9]+" />
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>* Usuario</label>
+                        </td>                    
+                        <td>
+                            <input type="text" class="form-control" #usuario="ngModel" name="usuario" [(ngModel)]="participante.usuario" required />
+                        </td>
+                        <td>
+                            <span *ngIf="!usuario.valid && usuario.touched" class="label label-danger">El nombre de usuario es obligatorio. Puede utilizar el email.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>* Password</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" #password="ngModel" name="password" [(ngModel)]="participante.password" required />
+                        </td>
+                        <td>
+                            <span *ngIf="!password.valid && password.touched" class="label label-danger">La contraseña es obligatoria</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <br/>
+                            <input type="submit" value="Enviar" [disabled]="!formUsuarios.form.valid" class="btn btn-success" />
+                        </td>                
+                    </tr>
+                </table>
+            </form>  
+        </div>
+    </div>
+</div>

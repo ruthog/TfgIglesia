@@ -1,0 +1,23 @@
+<div *ngIf="actividades">
+    <div *ngFor="let act  of actividades">
+        <form #formUsuarios="ngForm" (ngSubmit)="onSubmit(act.id)" id="{{act.id}}">
+
+            <label id="estiloLabel">Nombre:</label><strong>{{ act.nombre }}</strong>
+            <label id="estiloLabel">Fecha:</label> {{ act.fecha1 }}
+        
+            <input type="submit" value="Desapuntarse" class="btn btn-xs btn-warning" />
+        </form>               
+    </div>
+</div>
+
+<!--<span *ngIf="mostrarUpdate===true">-->
+<!--<button (click)="delete(book.id)">Update</button>-->
+<!--</span>-->
+<!--<button (click)="updateBook(book.id)">Update</button>-->
+<!--<span *ngIf="mostrarDelete===true">-->
+<!--</span>-->
+
+
+<!--<span *ngIf="mostrarAdd===true">-->
+    <!--<button (click)="abrirListActividades(idUsuario)">Apuntarse a Actividades</button>-->
+<!--</span>-->

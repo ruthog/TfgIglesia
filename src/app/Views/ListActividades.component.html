@@ -1,0 +1,40 @@
+<div class="col-lg-10 col-lg-offset-1">
+    <div class="jumbotron">
+        <div id="Titulo">
+            <h3>{{titulo}}</h3>
+        </div>
+        <div *ngIf="!actividadesMostrar">
+            <h3>Aún no se han organizado actividades para este curso en la parroquia.</h3>
+        </div>
+        <div *ngIf="actividadesMostrar" style=" text-align:center; width: 50%; margin-right: 25%; margin-left: 25%; padding-top: 20px;">
+            
+            <div *ngFor="let act of actividadesMostrar" > 
+                <form #formUsuarios="ngForm" (ngSubmit)="onSubmit(act.id)" id="{{act.id}}"> 
+                    <label style="padding-bottom: 10px; padding-right: 5px; ">{{ act.nombre }}</label> <input type="submit" value="Apuntarse a la actividad" class="btn btn-xs btn-success" />
+                </form>                        
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--<button (ngSubmit)="onSubmit(act.id)">Apuntarse a Actividades</button>-->
+<!--
+                <form #formUsuarios="ngForm" (ngSubmit)="onSubmit()" id="act">
+                <label>
+                <input type="checkbox" value="{{act.id}}" name="{{act.id}}" (change) ="updateSelectChecks($event)" />
+                    {{ act.nombre }}
+                </label>
+                
+                <input type="submit" value="Apuntarse a Actividad" />
+                <br/>
+                </form>
+            -->
+
+<!--<button (submit)="kdjakdkajsd()">Apuntarse a Actividades</button>-->
+                   
+<!--
+     [checked]="(facility.timeslotids && (-1 !== facility.timeslotids.indexOf(timeslot.id)) ? 'checked' : '')" (change)="updateSelected($event)"
+-->
